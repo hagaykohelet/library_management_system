@@ -30,28 +30,18 @@ def load_data():
     users = [User.from_dict(d) for d in payload.get("users", [])]
     return books, users
 
-def export_csv(books, users):
-    ensure_data_dir()
-    with open(BOOKS_CSV, "w", encoding="utf-8", newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(["title", "author", "isbn", "is_available"])
-        for b in books:
-            writer.writerow([b.title, b.author, b.isbn, b.is_available])
-    with open(USERS_CSV, "w", encoding="utf-8", newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(["name", "id", "borrowed_books_isbns"])
-        for u in users:
-            writer.writerow([u.name, u.id, ";".join(u.borrowed_books)])
+# def export_csv(books, users):
+#     ensure_data_dir()
+#     with open(BOOKS_CSV, "w", encoding="utf-8", newline='') as f:
+#         writer = csv.writer(f)
+#         writer.writerow(["title", "author", "isbn", "is_available"])
+#         for b in books:
+#             writer.writerow([b.title, b.author, b.isbn, b.is_available])
+#     with open(USERS_CSV, "w", encoding="utf-8", newline='') as f:
+#         writer = csv.writer(f)
+#         writer.writerow(["name", "id", "borrowed_books_isbns"])
+#         for u in users:
+#             writer.writerow([u.name, u.id, ";".join(u.borrowed_books)])
 
 
 
-a=Book("1984", "jjj", "1234567890")
-b=Book("To Kill", " Lee", "0987654321")
-u=User("Alice", "U001")
-u.borrowed_books.append(a.isbn)
-books = [a, b]
-users = [u]
-save_data(books, users)
-loaded_books, loaded_users = load_data()
-export_csv(loaded_books, loaded_users)
-print("Data saved, loaded, and exported to CSV successfully.")
