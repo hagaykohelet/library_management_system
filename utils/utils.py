@@ -1,7 +1,6 @@
 import csv
 
 
-
 def input_nonempty(prompt):
     while True:
         p = input(prompt).strip()
@@ -9,8 +8,9 @@ def input_nonempty(prompt):
             return p
         print("Input cannot be empty.")
 
+
 def export_to_csv(books, filename):
-    with open(filename, "w", encoding= "utf-8", newline="") as f:
+    with open(filename, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow((["Title", "Author", "ISBN", "Available"]))
         for book in books:

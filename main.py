@@ -64,19 +64,17 @@ def main():
 
         elif choice == "7":
             filename = input("enter filename for csv export ")
-            export_to_csv(library.list_of_books,filename)
+            export_to_csv(library.list_of_books, filename)
             print(f"data exported to {filename} successfully\n")
 
         elif choice == "8":
-            storage.save_data(library.list_of_books,library.list_of_users)
+            storage.save_data(library.list_of_books, library.list_of_users)
             print("data saved exiting\n")
             print("good bye. ")
             break
 
         else:
             print("invalid input try again")
-
-
 
 
 main()
