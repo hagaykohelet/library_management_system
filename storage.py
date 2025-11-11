@@ -45,13 +45,5 @@ def export_csv(books, users):
 
 
 
-a=Book("1984", "jjj", "1234567890")
-b=Book("To Kill", " Lee", "0987654321")
-u=User("Alice", "U001")
-u.borrowed_books.append(a.isbn)
-books = [a, b]
-users = [u]
-save_data(books, users)
-loaded_books, loaded_users = load_data()
-export_csv(loaded_books, loaded_users)
-print("Data saved, loaded, and exported to CSV successfully.")
+
+
