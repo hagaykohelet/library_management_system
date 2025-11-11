@@ -1,0 +1,17 @@
+{
+  "books": [
+    {
+      "title": "hagya",
+      "author": "hagay",
+      "isbn": "123",
+      "is_available": true
+    }
+  ],
+  "users": [
+    {
+      "name": "hagya",
+      "id": "123",
+      "borrowed_books": []
+    }
+  ]
+}
